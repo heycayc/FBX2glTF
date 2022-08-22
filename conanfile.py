@@ -9,11 +9,14 @@ from conans import ConanFile, CMake
 class FBX2glTFConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     requires = (
-        ("boost_filesystem/1.69.0@bincrafters/stable"),
-        ("libiconv/1.15@bincrafters/stable"),
-        ("zlib/1.2.11@conan/stable"),
-        ("libxml2/2.9.9@bincrafters/stable"),
-        ("fmt/5.3.0@bincrafters/stable"),
+        ("cppcodec/0.2"),
+        ("cppcodec/0.2"),
+        ("mathfu/1.1.0"),
+        ("draco/1.5.3"),
+        ("libiconv/1.15"),
+        ("zlib/1.2.11"),
+        ("libxml2/2.9.9"),
+        ("fmt/5.3.0"),
     )
     generators = "cmake_find_package", "cmake_paths"
 
@@ -23,7 +26,7 @@ class FBX2glTFConan(ConanFile):
             and self.settings.compiler.libcxx == "libstdc++"
         ):
             raise Exception(
-                "Rerun 'conan install' with argument: '-s compiler.libcxx=libstdc++11'"
+                "Rerun 'conan install' with argument: '-s compiler.libcxx=libstdc++17'"
             )
 
     def build(self):

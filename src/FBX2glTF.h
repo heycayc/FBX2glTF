@@ -74,6 +74,7 @@ enum class AnimationFramerateOptions {
   BAKE60, // bake animations at 60 fps
 };
 
+
 /**
  * User-supplied options that dictate the nature of the glTF being generated.
  */
@@ -125,4 +126,6 @@ struct GltfOptions {
 
   /** Temporary directory used by FBX SDK. */
   std::string fbxTempDir;
+
+  
 };
